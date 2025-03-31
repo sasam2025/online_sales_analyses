@@ -1,5 +1,4 @@
-from productmanager import ProductManager
-from product import Product
+
 
 def main():
     manager = ProductManager()
@@ -13,12 +12,11 @@ def main():
     manager.add_product(product2)
     manager.add_product(product3)
     
-    # Prikaz svih proizvoda
-    manager.display_all_products()
+    # Kreiranje korpe
+    cart = Cart()
+    cart.add_to_cart(product1)
+    cart.add_to_cart(product2)
     
-    # Ukupna vrednost inventara
-    total_value = manager.total_inventory_value()
-    print(f"Total inventory value: {total_value}")
-
-if __name__ == "__main__":
-    main()
+    # Prikaz vrednosti korpe
+    cart.display_cart()
+    print(f"Total cart value: {cart.total_cart_value()}")
